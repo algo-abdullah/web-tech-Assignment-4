@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MD Slides</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LIBRARY SCREEN -->
+  <section id="library" class="view" hidden>
+    <header class="topbar">
+      <div class="brand"><span class="logo">&#9638;</span> MD Slides</div>
+      <button id="newBtn" class="btn primary">+ New presentation</button>
+    </header>
+    <main class="library-body">
+      <h2>Your presentations</h2>
+      <p class="muted">Saved in this browser. Write slides in Markdown, separate them with <code>---</code>.</p>
+      <div id="libraryList" class="cards"></div>
+    </main>
+  </section>
+
+  <!-- CREATE / EDIT SCREEN -->
+  <section id="editor" class="view" hidden>
+    <header class="topbar">
+      <button id="backBtn" class="btn ghost" title="Back to library">&larr; Library</button>
+      <input id="titleInput" class="title-input" type="text" placeholder="Presentation name" aria-label="Presentation name">
+      <span id="status" class="status"></span>
+      <button id="saveBtn" class="btn primary" title="Save (Ctrl+S)">Save</button>
+      <button id="presentBtn" class="btn" title="Present (F11)">&#9654; Present</button>
+    </header>
+    <div class="workspace">
+      <div class="pane">
+        <div class="pane-head">Markdown</div>
+        <textarea id="mdInput" spellcheck="false" aria-label="Markdown editor"></textarea>
+      </div>
+      <div class="pane">
+        <div class="pane-head">Live preview</div>
+        <div id="editorViewer" class="viewer"></div>
+      </div>
+    </div>
+    <footer class="hint">
+      Slides are separated by <code>---</code> &middot; Ctrl+S save &middot; F11 present &middot; &larr; &rarr; navigate (Alt+&larr;/&rarr; while typing)
+    </footer>
+  </section>
+
+  <!-- PRESENTATION SCREEN -->
+  <section id="present" class="view" hidden>
+    <div id="presentViewer" class="viewer"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
